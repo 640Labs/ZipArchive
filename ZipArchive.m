@@ -397,6 +397,7 @@
                     components.year = fileInfo.tmu_date.tm_year;
                     
                     NSCalendar *gregorianCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+                    [gregorianCalendar setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"UTC"]];
                     NSDate* orgDate = [[gregorianCalendar dateFromComponents:components] retain];
                     [components release];
                     [gregorianCalendar release];
